@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       splash: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/images/nahpi_uba_logo.png', height: 150),
+          Image.asset('assets/images/uba_logo.png', height: 150),
           const SizedBox(height: 10),
           const Text('Authentikate - UBa Attendance',
               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),

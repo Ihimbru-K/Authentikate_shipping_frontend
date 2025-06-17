@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/nahpi_uba_logo.png', height: 100),
+            Image.asset('assets/images/uba_logo.png', height: 100),
             const SizedBox(height: 20),
             TextField(
               controller: _usernameController,
@@ -44,8 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (_) => const DashboardScreen()));
                 } catch (e) {
+                  print('Error: $e');
                   ScaffoldMessenger.of(context)
-                      .showSnackBar(const SnackBar(content: Text('Login failed')));
+                      .showSnackBar(SnackBar(content: Text('Login failed: $e')));
                 }
               },
               child: const Text('Login'),

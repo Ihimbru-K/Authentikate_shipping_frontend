@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const String apiBaseUrl = 'http://localhost:8000';
+ // static const String apiBaseUrl = 'http://localhost:8000';
+ static const String apiBaseUrl =  'http://192.168.1.118:8000';
+
+ // static const String apiBaseUrl = 'http://10.0.2.2:8000';
+ // http://192.168.105.89:8080/api/v1/customers
   static const Color primaryColor = Color(0xFF003087); // UBa Blue
   static const Color accentColor = Color(0xFFFFD700); // NAHPI Gold
   static const Color successColor = Color(0xFF228B22); // NAHPI Green
