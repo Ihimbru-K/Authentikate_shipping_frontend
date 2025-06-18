@@ -18,8 +18,8 @@ class DashboardCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 150.0, // Exact width from image
-        height: 100.0, // Exact height from image
+        width: 150.0,
+        height: 150.0,
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: Constants.backgroundColor,

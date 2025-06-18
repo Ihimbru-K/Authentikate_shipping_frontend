@@ -10,19 +10,39 @@ class AuthProvider with ChangeNotifier {
   String? get token => _token;
   String? get name => _name;
 
+
+
   Future<void> login(String username, String password) async {
     try {
       final data = await AuthService.login(username, password);
+      print('Login response: $data'); // Debug the full response
       _token = data['access_token'];
-      _name = data['name']; // Extract name from response
+      _name = data['name']; // Should now be "admin1"
+      print('Set name: $_name'); // Debug the set name
+      if (_name == null) _name = username; // Fallback only if null
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('token', _token!);
       await prefs.setString('name', _name!); // Store name
       notifyListeners();
     } catch (e) {
+      print('Login error: $e'); // Debug any errors
       throw Exception('Login failed: $e');
     }
   }
+
+  // Future<void> login(String username, String password) async {
+  //   try {
+  //     final data = await AuthService.login(username, password);
+  //     _token = data['access_token'];
+  //     _name = data['name']; // Extract name from response
+  //     final prefs = await SharedPreferences.getInstance();
+  //     await prefs.setString('token', _token!);
+  //     await prefs.setString('name', _name!); // Store name
+  //     notifyListeners();
+  //   } catch (e) {
+  //     throw Exception('Login failed: $e');
+  //   }
+  // }
 
   Future<void> signup(String username, String password, int departmentId) async {
     try {
