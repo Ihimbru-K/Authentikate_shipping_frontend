@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   await Provider.of<AuthProvider>(context, listen: false)
                       .login(_usernameController.text, _passwordController.text);
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (_) => const DashboardScreen()));
+                      context, MaterialPageRoute(builder: (_) => DashboardScreen()));
                 } catch (e) {
                   print('Error: $e');
                   ScaffoldMessenger.of(context)

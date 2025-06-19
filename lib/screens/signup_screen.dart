@@ -25,7 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/nahpi_uba_logo.png', height: 100),
+            Image.asset('assets/images/uba_logo.png', height: 100),
             const SizedBox(height: 20),
             TextField(
               controller: _usernameController,

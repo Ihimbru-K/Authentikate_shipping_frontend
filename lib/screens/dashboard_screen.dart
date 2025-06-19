@@ -1,3 +1,6 @@
+import 'package:authentikate/screens/enroll_screen.dart';
+import 'package:authentikate/screens/session_screen.dart';
+import 'package:authentikate/screens/upload_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
@@ -57,14 +60,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   icon: Icons.person_add,
                   title: 'Enroll Students',
                   onTap: () {
-                    // Navigate to Enroll Screen
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => EnrollScreen()));
                   },
                 ),
                 DashboardCard(
                   icon: Icons.upload_file,
                   title: 'Upload Course List',
                   onTap: () {
-                    // Navigate to Upload Screen
+                  //  Navigator.push(context, MaterialPageRoute(builder: (context) => UploadScreen()));
                   },
                 ),
               ],
@@ -77,7 +80,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   icon: Icons.add_box,
                   title: 'Create Session',
                   onTap: () {
-                    // Navigate to Session Screen
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SessionScreen()));
                   },
                 ),
                 DashboardCard(
