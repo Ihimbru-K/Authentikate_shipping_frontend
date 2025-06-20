@@ -1,5 +1,6 @@
 import 'package:authentikate/screens/attendance_screen.dart';
 import 'package:authentikate/screens/enroll_screen.dart';
+import 'package:authentikate/screens/reports_screen.dart';
 import 'package:authentikate/screens/session_screen.dart';
 import 'package:authentikate/screens/upload_screen.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +100,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   icon: Icons.description,
                   title: 'View Reports',
                   onTap: () {
-                    // Navigate to Reports Screen
+           Navigator.push(context, MaterialPageRoute(builder: (context)=>ReportsScreen()));
                   },
                 ),
                 DashboardCard(
