@@ -54,6 +54,38 @@ class DataService {
       throw Exception('Data fetch error: $e');
     }
   }
+  //
+  // static Future<String?> _getToken() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   return prefs.getString('token');
+  // }
+
+
+
+
+
+  static Future<List<Map<String, dynamic>>> fetchSessions(int adminId) async {
+    try {
+      final url = Uri.parse('${Constants.apiBaseUrl}/sessions?admin_id=$adminId');
+      final response = await http.get(
+        url,
+        headers: {'Authorization': 'Bearer ${await _getToken()}'},
+      );
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body) as List;
+        return data.map((session) => {
+          'session_id': session['session_id'] as int,
+          'course_code': session['course_code'] as String,
+          'start_time': DateTime.parse(session['start_time'] as String),
+          'end_time': DateTime.parse(session['end_time'] as String),
+        }).toList();
+      } else {
+        throw Exception('Failed to fetch sessions: ${response.body}');
+      }
+    } catch (e) {
+      throw Exception('Error fetching sessions: $e');
+    }
+  }
 
   static Future<String?> _getToken() async {
     final prefs = await SharedPreferences.getInstance();

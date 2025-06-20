@@ -1,3 +1,4 @@
+import 'package:authentikate/screens/attendance_screen.dart';
 import 'package:authentikate/screens/enroll_screen.dart';
 import 'package:authentikate/screens/session_screen.dart';
 import 'package:authentikate/screens/upload_screen.dart';
@@ -85,7 +86,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   icon: Icons.fingerprint,
                   title: 'Authenticate Students',
                   onTap: () {
-                    // Navigate to Auth Screen
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceScreen()));
                   },
                 ),
               ],
