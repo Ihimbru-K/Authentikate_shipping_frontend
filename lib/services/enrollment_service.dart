@@ -26,7 +26,7 @@ class EnrollmentService {
         var photoFile = await http.MultipartFile.fromPath(
           'photo',
           photoPath,
-          contentType: MediaType('image', 'png'), // Adjust based on file type
+          contentType: MediaType('image', 'jpg'), // Adjust based on file type
         );
         request.files.add(photoFile);
       }

@@ -4,8 +4,6 @@ import 'package:authentikate/screens/upload_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
-import '../utils/constants.dart';
-
 import '../widgets/dashboard_card_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -67,7 +65,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   icon: Icons.upload_file,
                   title: 'Upload Course List',
                   onTap: () {
-                  //  Navigator.push(context, MaterialPageRoute(builder: (context) => UploadScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => UploadScreen()));
                   },
                 ),
               ],
@@ -119,10 +117,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 }
-
-
-
-
 
 
 
