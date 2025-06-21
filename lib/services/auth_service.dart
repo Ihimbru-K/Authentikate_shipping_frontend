@@ -4,8 +4,23 @@ import '../utils/constants.dart';
 import 'api_service.dart';
 
 class AuthService {
+  // static Future<Map<String, dynamic>> login(String username, String password) async {
+  //   final response = await ApiService.post('/auth/login', {'username': username, 'password': password});
+  //   if (response.statusCode == 200) {
+  //     return jsonDecode(response.body);
+  //   } else {
+  //     throw Exception('Login failed: ${response.body}');
+  //   }
+  // }
   static Future<Map<String, dynamic>> login(String username, String password) async {
-    final response = await ApiService.post('/auth/login', {'username': username, 'password': password});
+    final url = Uri.parse('${Constants.apiBaseUrl}/auth/login');
+    print('Login request to: $url with $username, $password'); // Debug the request
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'}, // No auth header needed
+      body: jsonEncode({'username': username, 'password': password}),
+    );
+    print('Login response status: ${response.statusCode}, body: ${response.body}'); // Debug response
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
