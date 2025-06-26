@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           Image.asset('assets/images/uba_logo.png', height: 150),
           const SizedBox(height: 10),
-          const Text('Authentikate - UBa Attendance',
+          const Text('Authentikate - UBa Attendance ',
               style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
         ],
       ),
@@ -21,7 +21,7 @@ class SplashScreen extends StatelessWidget {
       splashIconSize: 250,
       backgroundColor: const Color(0xFF003087),
       splashTransition: SplashTransition.fadeTransition,
-      duration: 3000, // 3 seconds
+      duration: 7000,
     );
   }
 }
