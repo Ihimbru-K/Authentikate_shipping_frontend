@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:authentikate/screens/dispute_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -67,7 +68,8 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
 
   void _disputeCA() {
     if (_studentDetails != null) {
-      Navigator.pushNamed(context, '/dispute');
+     // Navigator.pushNamed(context, '/dispute');
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DisputeScreen()));
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('CA Mark Dispute Initiated')));
     }
   }
