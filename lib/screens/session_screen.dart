@@ -44,7 +44,7 @@ class _SessionScreenState extends State<SessionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Schedule Exam')),
+      appBar: AppBar(title: const Text('Schedule Exam'), centerTitle: true,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(

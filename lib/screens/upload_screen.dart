@@ -28,10 +28,22 @@ class _UploadScreenState extends State<UploadScreen> {
     _loadCourses();
   }
 
+  // Future<void> _loadCourses() async {
+  //   try {
+  //     final prefs = await SharedPreferences.getInstance();
+  //     final deptId = (await prefs.getInt('department_id')) ?? 1; // Fetch from auth
+  //     final courses = await DataService.fetchCourses(deptId);
+  //     if (mounted) setState(() => _courses = courses);
+  //   } catch (e) {
+  //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error loading courses: $e')));
+  //   }
+  // }
+
   Future<void> _loadCourses() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final deptId = (await prefs.getInt('department_id')) ?? 1; // Fetch from auth
+      final deptId = (await prefs.getInt('department_id')) ?? 1;
+      print('Fetched department_id: $deptId'); // Debug print
       final courses = await DataService.fetchCourses(deptId);
       if (mounted) setState(() => _courses = courses);
     } catch (e) {
@@ -39,10 +51,12 @@ class _UploadScreenState extends State<UploadScreen> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Import Registrations')),
+      appBar: AppBar(title: const Text('Import Registrations'), centerTitle: true,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(

@@ -21,9 +21,9 @@ class DataService {
     }
   }
 
-  static Future<List<Map<String, dynamic>>> fetchLevels(int departmentId) async {
+  static Future<List<Map<String, dynamic>>> fetchLevels() async {
     try {
-      final url = Uri.parse('${Constants.apiBaseUrl}/levels?department_id=$departmentId'); // Add this endpoint
+      final url = Uri.parse('${Constants.apiBaseUrl}/levels');
       final response = await http.get(
         url,
         headers: {'Authorization': 'Bearer ${await _getToken()}'},
@@ -38,9 +38,31 @@ class DataService {
     }
   }
 
+
+
+
+
+  // static Future<List<Map<String, dynamic>>> fetchLevels(int departmentId) async {
+  //   try {
+  //     final url = Uri.parse('${Constants.apiBaseUrl}/levels?department_id=$departmentId'); // Add this endpoint
+  //     final response = await http.get(
+  //       url,
+  //       headers: {'Authorization': 'Bearer ${await _getToken()}'},
+  //     );
+  //     if (response.statusCode == 200) {
+  //       return List<Map<String, dynamic>>.from(jsonDecode(response.body));
+  //     } else {
+  //       throw Exception('Failed to fetch levels: ${response.body}');
+  //     }
+  //   } catch (e) {
+  //     throw Exception('Data fetch error: $e');
+  //   }
+  // }
+
   static Future<List<Map<String, dynamic>>> fetchCourses(int departmentId) async {
     try {
-      final url = Uri.parse('${Constants.apiBaseUrl}/courses?department_id=$departmentId'); // Add this endpoint
+     // final url = Uri.parse('${Constants.apiBaseUrl}/courses?department_id=$departmentId');
+      final url = Uri.parse('${Constants.apiBaseUrl}/courses');
       final response = await http.get(
         url,
         headers: {'Authorization': 'Bearer ${await _getToken()}'},

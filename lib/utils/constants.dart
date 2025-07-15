@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 class Constants {
  // static const String apiBaseUrl = 'http://localhost:8000';
- static const String apiBaseUrl =  'http://192.168.1.119:8000';
+ //static const String apiBaseUrl =  'http://192.168.1.119:8000';
+
+
+
+ static const String apiBaseUrl =  'http://10.239.170.89:8000';
+
+
+
 
  // static const String apiBaseUrl = 'http://10.0.2.2:8000';
  // http://192.168.105.89:8080/api/v1/customers

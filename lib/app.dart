@@ -20,8 +20,11 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => AuthProvider()),
           ],
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+
             title: 'NAHPI Attendance',
             theme: ThemeData(
+
               primarySwatch: Colors.blue,
               fontFamily: 'Roboto',
               textTheme: TextTheme(

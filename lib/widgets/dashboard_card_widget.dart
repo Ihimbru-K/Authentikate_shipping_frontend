@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/constants.dart';
 
 class DashboardCard extends StatelessWidget {
@@ -15,11 +16,13 @@ class DashboardCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 150.0,
-        height: 150.0,
+        height: 150.h,
+        width: 150.0.w,
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: Constants.backgroundColor,
@@ -37,8 +40,8 @@ class DashboardCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 30.0, color: Colors.black),
-            const SizedBox(height: 8.0),
+            Icon(icon, size: 30.0.r, color: Colors.blueAccent),
+            SizedBox(height: 8.0.h),
             Text(
               title,
               textAlign: TextAlign.center,

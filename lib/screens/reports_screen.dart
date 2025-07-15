@@ -6,6 +6,9 @@ import '../services/report_service.dart';
 import '../utils/constants.dart';
 import '../widgets/custom_dropdown_widget.dart';
 import '../widgets/custom_button.dart';
+import 'attendance_screen.dart';
+import 'dashboard_screen.dart';
+import 'enroll_screen.dart';
 
 class ReportsScreen extends StatefulWidget {
   const ReportsScreen({super.key});
@@ -77,7 +80,8 @@ class _ReportsScreenState extends State<ReportsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Reports')),
+      appBar: AppBar(title: const Text('Reports', ), centerTitle: true,),
+      bottomNavigationBar: buildBottomNavBar(context, 3),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -105,6 +109,28 @@ class _ReportsScreenState extends State<ReportsScreen> {
           ],
         ),
       ),
+    );
+  }
+  Widget buildBottomNavBar(BuildContext context, int currentIndex) {
+    return BottomNavigationBar(
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.person_add), label: 'Register'),
+        BottomNavigationBarItem(icon: Icon(Icons.fingerprint), label: 'Attendance'),
+        BottomNavigationBarItem(icon: Icon(Icons.receipt), label: 'Reports'),
+      ],
+      currentIndex: currentIndex,
+      selectedItemColor: Colors.black87, // Deep black for active
+      unselectedItemColor: Colors.grey,  // Grey for inactive
+      onTap: (index) {
+        if (index == currentIndex) return; // Avoid duplicate nav
+        switch (index) {
+          case 0: Navigator.push(context, MaterialPageRoute(builder: (context)=>DashboardScreen())); break;
+          case 1: Navigator.push(context, MaterialPageRoute(builder: (context)=>EnrollScreen())); break;
+          case 2: Navigator.push(context, MaterialPageRoute(builder: (context)=>AttendanceScreen())); break;
+          case 3: Navigator.push(context, MaterialPageRoute(builder: (context)=> ReportsScreen())); break;
+        }
+      },
     );
   }
 }
