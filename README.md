@@ -1,4 +1,3 @@
-````markdown
 # Authentikate Mobile – NAHPI-Bamenda Biometric Exam Attendance System
 
 ## Overview
